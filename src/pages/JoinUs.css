@@ -1,0 +1,47 @@
+.join-steps-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.join-steps {
+  list-style: none;
+  margin: 0 auto 3rem;
+  padding: 0;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.join-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: var(--offset-shadow-sm);
+}
+.join-step h3 {
+  margin-bottom: 0.35rem;
+}
+.join-step p {
+  margin: 0;
+}
+
+.join-step-number {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-wordmark);
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.join-cta {
+  text-align: center;
+  padding: 2.5rem;
+  max-width: 640px;
+  margin: 0 auto;
+  box-shadow: var(--offset-shadow-sm);
+}
+.join-cta .btn {
+  margin-top: 0.5rem;
+}

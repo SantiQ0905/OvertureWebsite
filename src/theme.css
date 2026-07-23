@@ -1,0 +1,467 @@
+/* ==========================================================================
+   Overture 7421 — design tokens
+   80s car-brochure / VHS / CRT dashboard aesthetic. Hard edges, offset
+   drop-shadows, chrome badge type — not soft glassmorphism.
+   Colors below are fixed brand values — do not shade/derive new colors from
+   them, use exactly as specified in MVP.md.
+   ========================================================================== */
+
+:root {
+  /* Brand palette (exact values, see MVP.md) */
+  --color-primary: #6b35aa; /* Main / primary brand color */
+  --color-wordmark: #96d1d5; /* "OVERTURE" wordmark + detail accents */
+  --color-dark: #3e3d60; /* muted / pre-reveal states + panel backgrounds */
+  --color-button: #ec188b; /* buttons, default state */
+  --color-link: #df10e0; /* links, default state */
+  --color-hover: #df4e95; /* hover state, all interactive elements */
+  --color-active: #df6f6d; /* active/pressed state, all interactive elements */
+  --color-disabled: #df7d5d; /* disabled state, all interactive elements */
+  --color-sponsor-accent: #e0993a; /* RESERVED for Sponsors tier content only */
+
+  /* Neutral scaffolding (not brand colors — page backdrop + text) */
+  --bg-void: #0a0912;
+  --bg-void-soft: #131022;
+  --bg-panel-solid: #16131f;
+  --text-primary: #f1eef7;
+  --text-muted: #a8a3c2;
+  --border-hard: var(--color-dark);
+  --shadow-ink: #05040a;
+
+  /* Gradients (banded, brand-colors only — the "holo/CD edge" motif) */
+  --gradient-ignition: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-button) 100%
+  );
+  --gradient-holo: linear-gradient(
+    100deg,
+    var(--color-primary) 0%,
+    var(--color-link) 25%,
+    var(--color-button) 50%,
+    var(--color-wordmark) 75%,
+    var(--color-primary) 100%
+  );
+  --gradient-chrome: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    var(--color-wordmark) 38%,
+    #ffffff 52%,
+    var(--color-primary) 100%
+  );
+
+  /* Typography */
+  --font-display: 'Bungee', 'Segoe UI', sans-serif;
+  --font-body: 'Barlow Condensed', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Share Tech Mono', ui-monospace, monospace;
+
+  /* Motion */
+  --ease-dash: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition-fast: 120ms var(--ease-dash);
+  --transition-mid: 220ms var(--ease-dash);
+
+  /* Hard offset shadow — the signature "brochure card" depth cue */
+  --offset-shadow-sm: 3px 3px 0 var(--shadow-ink);
+  --offset-shadow: 5px 5px 0 var(--shadow-ink);
+  --offset-shadow-lg: 8px 8px 0 var(--shadow-ink);
+
+  color-scheme: dark;
+  color: var(--text-primary);
+  background: var(--bg-void);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  background: var(--bg-void);
+  position: relative;
+}
+
+/* Faint always-on tape grain — kept low-opacity so it reads as texture, not noise */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  margin: 0 0 0.5em;
+  color: var(--text-primary);
+}
+
+h1 {
+  font-size: clamp(1.9rem, 5vw, 3.1rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--text-muted);
+  line-height: 1.55;
+  font-size: 1.05rem;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: var(--color-hover);
+}
+a:active {
+  color: var(--color-active);
+}
+a[aria-disabled='true'] {
+  color: var(--color-disabled);
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+button {
+  font-family: var(--font-body);
+}
+
+/* ------------------------------------------------------------------------
+   Chrome / gradient display text — reserved for the hero wordmark and
+   robot spec-sheet names only. Do not slap on every heading.
+   ------------------------------------------------------------------------ */
+.chrome-text {
+  font-family: var(--font-display);
+  background: var(--gradient-chrome);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.vhs-title {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  text-shadow:
+    2px 0 0 rgba(223, 16, 224, 0.55),
+    -2px 0 0 rgba(150, 209, 213, 0.55);
+}
+
+/* Thin banded "CD-edge" stripe divider — used instead of gradient text spam */
+.holo-strip {
+  display: block;
+  height: 4px;
+  width: 64px;
+  background: var(--gradient-holo);
+  margin: 0.6em 0 1.1em;
+}
+.holo-strip.centered {
+  margin-inline: auto;
+}
+
+/* ------------------------------------------------------------------------
+   Buttons — default / hover / active / disabled states applied consistently
+   Hard offset-shadow, "pressed" interaction, no blur/glow.
+   ------------------------------------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.9em 1.5em;
+  border-radius: 2px;
+  border: 2px solid var(--shadow-ink);
+  cursor: pointer;
+  color: #fff;
+  background: var(--color-button);
+  box-shadow: var(--offset-shadow);
+  transition:
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+  text-decoration: none;
+}
+.btn:hover {
+  background: var(--color-hover);
+  color: #fff;
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 var(--shadow-ink);
+}
+.btn:active {
+  background: var(--color-active);
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--shadow-ink);
+}
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  background: var(--color-disabled);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+  opacity: 0.65;
+}
+.btn:focus-visible {
+  outline: 2px solid var(--color-wordmark);
+  outline-offset: 2px;
+}
+
+.btn-outline {
+  background: var(--bg-panel-solid);
+  border-color: var(--color-button);
+  color: var(--color-wordmark);
+}
+.btn-outline:hover {
+  background: var(--bg-void-soft);
+  border-color: var(--color-hover);
+  color: var(--text-primary);
+}
+.btn-outline:active {
+  border-color: var(--color-active);
+}
+.btn-outline:disabled,
+.btn-outline[aria-disabled='true'] {
+  border-color: var(--color-disabled);
+  color: var(--color-disabled);
+  background: transparent;
+}
+
+/* ------------------------------------------------------------------------
+   Shared surfaces — brochure / spec-sheet card, hard border + corner ticks
+   ------------------------------------------------------------------------ */
+.panel {
+  background: var(--bg-panel-solid);
+  border: 2px solid var(--border-hard);
+  border-radius: 2px;
+  position: relative;
+}
+.panel::before,
+.panel::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  pointer-events: none;
+  border-color: var(--color-wordmark);
+  opacity: 0.7;
+}
+.panel::before {
+  top: -2px;
+  left: -2px;
+  border-top: 2px solid var(--color-wordmark);
+  border-left: 2px solid var(--color-wordmark);
+}
+.panel::after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 2px solid var(--color-wordmark);
+  border-right: 2px solid var(--color-wordmark);
+}
+
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Outrun sunset horizon grid — kept, it's literal automotive-dashboard motif */
+.grid-horizon {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.grid-horizon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(180deg, transparent 0%, var(--bg-void) 78%);
+}
+.grid-horizon::after {
+  content: '';
+  position: absolute;
+  left: -25%;
+  right: -25%;
+  bottom: 0;
+  height: 55%;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(150, 209, 213, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(150, 209, 213, 0.4) 1px, transparent 1px);
+  background-size: 8% 10%, 8% 100%;
+  transform: perspective(220px) rotateX(55deg);
+  transform-origin: bottom;
+  mask-image: linear-gradient(180deg, transparent 0%, black 25%);
+  opacity: 0.5;
+}
+
+/* CRT accent — apply sparingly (hero banners, 404) not sitewide.
+   Rendered as real child elements (not ::before/::after) so it can be
+   combined with .grid-horizon, which already owns those pseudo-elements. */
+.crt {
+  position: relative;
+  isolation: isolate;
+}
+.crt-scanlines,
+.crt-vignette,
+.crt-tracking {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.crt-scanlines {
+  z-index: 5;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.22) 0px,
+    rgba(0, 0, 0, 0.22) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+}
+.crt-vignette {
+  z-index: 6;
+  box-shadow: inset 0 0 90px 20px rgba(0, 0, 0, 0.65);
+}
+.crt-tracking {
+  left: 0;
+  right: 0;
+  top: -10%;
+  bottom: auto;
+  height: 40px;
+  z-index: 7;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(150, 209, 213, 0.12) 45%,
+    rgba(150, 209, 213, 0.2) 50%,
+    rgba(150, 209, 213, 0.12) 55%,
+    transparent 100%
+  );
+  animation: crt-roll 9s linear infinite;
+}
+@keyframes crt-roll {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+/* Scroll-reveal, pre-reveal tinted #3E3D60 per MVP */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  color: var(--color-dark);
+  transition:
+    opacity 600ms var(--ease-dash),
+    transform 600ms var(--ease-dash),
+    color 750ms var(--ease-dash);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--text-muted);
+}
+.reveal.is-visible h2,
+.reveal.is-visible h3 {
+  color: var(--text-primary);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ------------------------------------------------------------------------
+   Shared page-level utilities
+   ------------------------------------------------------------------------ */
+.kicker {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-wordmark);
+}
+
+.page-section {
+  padding-block: clamp(3rem, 8vw, 5rem);
+}
+
+.page-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.data-value {
+  font-family: var(--font-mono);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

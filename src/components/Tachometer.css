@@ -1,0 +1,39 @@
+.tachometer {
+  overflow: visible;
+}
+
+.tachometer-arc {
+  stroke-dasharray: 8 264;
+  animation: tach-arc-fill 1.4s var(--ease-dash) 0.15s forwards;
+}
+
+@keyframes tach-arc-fill {
+  from {
+    stroke-dasharray: 8 264;
+  }
+  to {
+    stroke-dasharray: 185 264;
+  }
+}
+
+.tachometer-needle {
+  transform-origin: 50px 50px;
+  transform: rotate(-110deg);
+  animation: tach-needle-sweep 1.4s var(--ease-dash) 0.15s forwards;
+}
+
+@keyframes tach-needle-sweep {
+  from {
+    transform: rotate(-110deg);
+  }
+  to {
+    transform: rotate(var(--needle-angle));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tachometer-arc,
+  .tachometer-needle {
+    animation: none;
+  }
+}

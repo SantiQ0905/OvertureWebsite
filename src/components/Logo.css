@@ -1,0 +1,94 @@
+.logo-ignition {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  animation: logo-flicker 1.7s var(--ease-dash) 1;
+}
+
+.logo-mark {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(3px 3px 0 rgba(5, 4, 10, 0.7));
+  transition: filter var(--transition-mid);
+}
+
+.logo-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 38%,
+    rgba(150, 209, 213, 0.85) 48%,
+    rgba(255, 255, 255, 0.95) 51%,
+    transparent 61%
+  );
+  background-size: 320% 100%;
+  background-position: 160% 0;
+  -webkit-mask-image: url('/images/logos/Overture/OVT_FRC_Colour.png');
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-image: url('/images/logos/Overture/OVT_FRC_Colour.png');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mix-blend-mode: screen;
+  animation: logo-sweep 2.4s var(--ease-dash) 0.3s 1;
+}
+
+.logo-ignition:hover .logo-sheen {
+  animation: logo-sweep 1.3s var(--ease-dash) 1;
+}
+
+.logo-ignition:hover .logo-mark {
+  filter: drop-shadow(5px 5px 0 rgba(5, 4, 10, 0.8));
+}
+
+@keyframes logo-sweep {
+  from {
+    background-position: 160% 0;
+  }
+  to {
+    background-position: -60% 0;
+  }
+}
+
+@keyframes logo-flicker {
+  0% {
+    opacity: 0.15;
+    filter: brightness(0.5);
+  }
+  6% {
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+  11% {
+    opacity: 0.35;
+    filter: brightness(0.6);
+  }
+  18% {
+    opacity: 1;
+    filter: brightness(1.35);
+  }
+  27% {
+    opacity: 0.55;
+    filter: brightness(0.8);
+  }
+  36% {
+    opacity: 1;
+    filter: brightness(1.05);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-ignition,
+  .logo-sheen {
+    animation: none;
+  }
+}

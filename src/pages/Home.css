@@ -1,0 +1,113 @@
+.hero {
+  padding-block: clamp(3rem, 10vw, 5rem) clamp(3.5rem, 10vw, 5.5rem);
+  border-bottom: 3px solid transparent;
+  border-image: var(--gradient-holo) 1;
+}
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.hero-title {
+  font-size: clamp(2rem, 7vw, 3.6rem);
+  margin: 0.4rem 0 0.75rem;
+}
+.hero-tagline {
+  max-width: 560px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: var(--text-primary);
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.scouting-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  color: inherit;
+  box-shadow: var(--offset-shadow-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+.scouting-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--offset-shadow);
+  border-color: var(--color-hover);
+}
+.scouting-card:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--shadow-ink);
+  border-color: var(--color-active);
+}
+.scouting-card-copy h2 {
+  margin-bottom: 0.35rem;
+}
+.scouting-card-copy p {
+  margin-bottom: 0.6rem;
+}
+.scouting-card-cta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: var(--color-link);
+}
+.scouting-card:hover .scouting-card-cta {
+  color: var(--color-hover);
+}
+.scouting-card-cta small {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.home-fleet-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: inherit;
+  box-shadow: var(--offset-shadow-sm);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+.home-fleet-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--offset-shadow);
+  border-color: var(--color-hover);
+}
+.home-fleet-item:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--shadow-ink);
+}
+.home-fleet-program {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.home-fleet-name {
+  font-size: 1.7rem;
+}
+
+@media (max-width: 560px) {
+  .scouting-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

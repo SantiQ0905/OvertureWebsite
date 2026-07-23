@@ -1,0 +1,40 @@
+.robots-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+.robots-filter button {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.6em 1.3em;
+  border: 2px solid var(--border-hard);
+  background: var(--bg-panel-solid);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    background var(--transition-fast);
+}
+.robots-filter button:hover {
+  border-color: var(--color-hover);
+  color: var(--color-hover);
+}
+.robots-filter button:active {
+  border-color: var(--color-active);
+  color: var(--color-active);
+}
+.robots-filter button.is-active {
+  background: var(--color-wordmark);
+  border-color: var(--color-wordmark);
+  color: var(--bg-void);
+}
+
+.robots-empty {
+  text-align: center;
+  padding: 2rem 0;
+}

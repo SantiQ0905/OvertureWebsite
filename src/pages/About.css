@@ -1,0 +1,10 @@
+.about-body {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+.about-body p {
+  font-size: 1.05rem;
+}

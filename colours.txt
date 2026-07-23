@@ -1,0 +1,9 @@
+#6B35AA - Main
+#96D1D5 - Text “OVERTURE” y detalles
+#3E3D60
+#EC188B - Botones
+#DF10E0 - Enlaces
+#DF4E95 - Hover
+#DF6F6D - Active
+#DF7D5D - Disabled
+#E0993A - Accent
