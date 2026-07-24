@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
+import { SocialLinks } from '../components/SocialLinks';
 import './News.css';
 
 // TODO: replace with the real Chief Delphi thread URLs once supplied.
@@ -44,6 +45,10 @@ export function News() {
       </div>
 
       <p className="news-note">{t.news.note}</p>
+
+      <div className="news-social">
+        <SocialLinks title={t.news.socialTitle} />
+      </div>
     </section>
   );
 }

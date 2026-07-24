@@ -92,6 +92,7 @@ const es = {
     frcDesc: 'Sigue la temporada de FIRST Robotics Competition de Overture.',
     cta: 'Abrir hilo',
     note: 'Se abre en Chief Delphi, en una pestaña nueva.',
+    socialTitle: '¡Para estar al día con lo último!',
   },
   join: {
     kicker: 'Súmate al equipo',
@@ -225,6 +226,7 @@ const en: typeof es = {
     frcDesc: "Follow Overture's FIRST Robotics Competition season.",
     cta: 'Open thread',
     note: 'Opens on Chief Delphi, in a new tab.',
+    socialTitle: 'To keep up with our latest info!',
   },
   join: {
     kicker: 'Join the crew',
