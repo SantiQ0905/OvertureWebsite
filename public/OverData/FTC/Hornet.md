@@ -19,6 +19,11 @@
 
 ## Awards
 1. List of awards
+   - Torneo Regional Torreon (12-13 Dec 2025)
+      - Connect Award Winner
+   - Mexico Championship (21-22 Feb 2025)
+      - Winning Alliance 1st Pick
+      - Control Award 2nd Place
 2. Sponsors
 3. Social Impact
 

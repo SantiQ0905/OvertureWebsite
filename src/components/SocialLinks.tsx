@@ -1,10 +1,9 @@
 import './SocialLinks.css';
 
-// TODO: replace with the real social profile URLs once supplied.
 const SOCIAL_LINKS = [
-  { label: 'Instagram', url: '#instagram-pending', icon: 'instagram' as const },
-  { label: 'Facebook', url: '#facebook-pending', icon: 'facebook' as const },
-  { label: 'X', url: '#x-pending', icon: 'x' as const },
+  { label: 'Instagram', url: 'https://www.instagram.com/overture7421/', icon: 'instagram' as const },
+  { label: 'Facebook', url: 'https://www.facebook.com/overture7421', icon: 'facebook' as const },
+  { label: 'X', url: 'https://x.com/overture7421', icon: 'x' as const },
 ];
 
 function SocialIcon({ name }: { name: 'instagram' | 'facebook' | 'x' }) {

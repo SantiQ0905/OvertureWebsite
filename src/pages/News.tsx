@@ -2,9 +2,10 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { SocialLinks } from '../components/SocialLinks';
 import './News.css';
 
-// TODO: replace with the real Chief Delphi thread URLs once supplied.
-const FTC_THREAD_URL = '#ftc-thread-pending';
-const FRC_THREAD_URL = '#frc-thread-pending';
+const FTC_THREAD_URL =
+  'https://www.chiefdelphi.com/t/overture-23619-ftc-build-blog-2025-2026-open-alliance/508083';
+const FRC_THREAD_URL =
+  'https://www.chiefdelphi.com/t/overture-7421-build-blog-2026-open-alliance/510279/1';
 
 export function News() {
   const { t } = useLanguage();

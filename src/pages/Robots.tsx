@@ -5,14 +5,24 @@ import { robots, programOrder, type Program } from '../data/robots';
 import './Robots.css';
 
 type Filter = 'ALL' | Program;
+const ALL_YEARS = 'ALL';
 
 export function Robots() {
   const { t } = useLanguage();
   const [filter, setFilter] = useState<Filter>('ALL');
+  const [year, setYear] = useState<string>(ALL_YEARS);
+
+  const years = useMemo(
+    () => Array.from(new Set(robots.map((r) => r.season))).sort((a, b) => b.localeCompare(a)),
+    [],
+  );
 
   const filtered = useMemo(
-    () => (filter === 'ALL' ? robots : robots.filter((r) => r.program === filter)),
-    [filter],
+    () =>
+      robots
+        .filter((r) => filter === 'ALL' || r.program === filter)
+        .filter((r) => year === ALL_YEARS || r.season === year),
+    [filter, year],
   );
 
   return (
@@ -46,6 +56,22 @@ export function Robots() {
             {program}
           </button>
         ))}
+      </div>
+
+      <div className="robots-year-filter">
+        <label htmlFor="robots-year-select">{t.robots.yearLabel}</label>
+        <select
+          id="robots-year-select"
+          value={year}
+          onChange={(e) => setYear(e.target.value)}
+        >
+          <option value={ALL_YEARS}>{t.robots.filterAll}</option>
+          {years.map((season) => (
+            <option key={season} value={season}>
+              {season}
+            </option>
+          ))}
+        </select>
       </div>
 
       {filtered.length > 0 ? (

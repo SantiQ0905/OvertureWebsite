@@ -8,3 +8,43 @@
 .about-body p {
   font-size: 1.05rem;
 }
+
+.about-section {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+}
+.about-section .page-header p {
+  color: var(--text-muted);
+}
+
+.about-section-row {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.about-block {
+  padding: 1.75rem clamp(1.5rem, 4vw, 2.25rem);
+}
+.about-block p:last-child {
+  margin-bottom: 0;
+}
+
+.about-school-logo {
+  height: 120px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 560px) {
+  .about-school-logo {
+    height: 88px;
+  }
+}
+
+.about-outreach {
+  margin-top: clamp(3rem, 7vw, 4.5rem);
+  max-width: 780px;
+  margin-inline: auto;
+  box-shadow: var(--offset-shadow-sm);
+}

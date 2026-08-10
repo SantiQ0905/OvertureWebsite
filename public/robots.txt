@@ -1,0 +1,7 @@
+# PLACEHOLDER DOMAIN — see public/sitemap.xml for the same note. Replace the Sitemap URL
+# below once a real production domain is chosen.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://overture7421.example/sitemap.xml

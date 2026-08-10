@@ -1,0 +1,42 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.video-grid-item {
+  padding: 0.75rem;
+}
+
+.video-grid-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--bg-void-soft);
+}
+.video-grid-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-grid-title {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.video-grid-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  text-align: center;
+  padding: 2rem;
+}
+.video-grid-empty p {
+  margin: 0;
+}

@@ -5,8 +5,7 @@ import { Tachometer } from '../components/Tachometer';
 import { robots } from '../data/robots';
 import './Home.css';
 
-// TODO: replace with the real scouting-tool URL once it's supplied.
-const SCOUTING_TOOL_URL = '#scouting-tool-url-pending';
+const SCOUTING_TOOL_URL = 'https://overture-7421.github.io/OverPitScouting/';
 
 export function Home() {
   const { t } = useLanguage();

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  min-height: 68px;
+  min-height: 92px;
 }
 
 .navbar-brand {
@@ -22,7 +22,7 @@
 }
 
 .navbar-brand-mark {
-  height: 38px;
+  height: 68px;
   width: auto;
 }
 
@@ -127,13 +127,19 @@
 }
 
 @media (max-width: 860px) {
+  .navbar-inner {
+    min-height: 76px;
+  }
+  .navbar-brand-mark {
+    height: 54px;
+  }
   .navbar-toggle {
     display: flex;
   }
 
   .navbar-links {
     position: absolute;
-    top: 68px;
+    top: 76px;
     left: 0;
     right: 0;
     flex-direction: column;
