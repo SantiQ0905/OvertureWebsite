@@ -2,8 +2,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { ScrollReveal } from '../components/ScrollReveal';
 import './JoinUs.css';
 
-// TODO: replace with the real recruitment contact address/form once supplied.
-const JOIN_CONTACT_URL = '#join-contact-pending';
+const JOIN_CONTACT_URL = 'https://forms.gle/w8wb3cqUG4YbhshF9';
 
 export function JoinUs() {
   const { t } = useLanguage();
@@ -33,7 +32,7 @@ export function JoinUs() {
       <div className="join-cta panel">
         <h2>{t.join.contactTitle}</h2>
         <p>{t.join.contactDesc}</p>
-        <a className="btn" href={JOIN_CONTACT_URL}>
+        <a className="btn" href={JOIN_CONTACT_URL} target="_blank" rel="noopener noreferrer">
           {t.join.contactCta}
         </a>
       </div>
