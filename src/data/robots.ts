@@ -78,7 +78,13 @@ export const robots: Robot[] = [
       'Mexico Championship — Winning Alliance 1st Pick',
       'Mexico Championship — Control Award 2nd Place',
     ],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/Hornet-2026-23619' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/Hornet-2026-23619' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/7277e04136a3819938e37df3/w/7ab5082c987248f1c211a53a/e/a49395ea5f1eccc4bc12e446',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El aguijón de la temporada FTC — rápido, preciso, competitivo desde el regional.',
@@ -119,7 +125,13 @@ export const robots: Robot[] = [
       'Torneo Regional Monterrey — Inspire Award 2nd Place',
       "Mexico Championship — Judges' Choice Award 2nd Place",
     ],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Diavel-23619-2025' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Diavel-23619-2025' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/3118dba012f7b01a185b682e/w/c2cf783002ba68b893c35c99/e/c515736f5cc04815a149d76d',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El diablo de Into the Deep — agilidad y garra que se llevaron el Inspire Award.',
@@ -160,7 +172,13 @@ export const robots: Robot[] = [
       'Torneo Regional Monterrey — Inspire Award 1st Place Winner',
       'Torneo Regional Monterrey — Finalist Alliance 1st Pick',
     ],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Valkyrie-26381-2025' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Valkyrie-26381-2025' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/c457ba5fc5a12ff46e2cc264/w/dd07e06a97381a1eed2923d3/e/9d12cc5bd19c6c627224430d',
+      },
+    ],
     copy: {
       es: {
         tagline: 'La guerrera de Into the Deep — Inspire Award 1st Place y alianza finalista en su primer regional.',
@@ -192,7 +210,10 @@ export const robots: Robot[] = [
       },
     ],
     awards: ["Torneo Regional Monterrey — Judges' Choice Award 1st Place Winner"],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Hayabusa-2024' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FTC-Hayabusa-2024' },
+      { label: 'Onshape', url: 'https://cad.onshape.com/documents/572abe76f930baf94aa3dc23' },
+    ],
     copy: {
       es: {
         tagline: 'El halcón de Centerstage 2023–2024 — velocidad pura desde su primer regional.',
@@ -236,7 +257,17 @@ export const robots: Robot[] = [
       },
     ],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Shelby-2026' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Shelby-2026' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/469b63a8fed7124363d4312c/w/debbcc39a192be3ae65783aa/e/32037e5420ffe0cdc8032168',
+      },
+      {
+        label: 'Onshape (2.0)',
+        url: 'https://cad.onshape.com/documents/b0bd25b39e02244254aef7a0/w/89dd967bdfb693acfa78ca96/e/77b552295b581418d285c856',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El músculo de Overture en REBUILT 2026 — motor grande, camino directo al Mundial.',
@@ -280,7 +311,17 @@ export const robots: Robot[] = [
       },
     ],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Daytona-2025' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Daytona-2025' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/6e2e164faf51d52a7f087f27/w/604c571604be9313a0d80876/e/e8aed2df21edf0719de38296',
+      },
+      {
+        label: 'Onshape (2.0)',
+        url: 'https://cad.onshape.com/documents/e3d9b34aa3ad383a1fba7755/w/8a392f7a410bd89245b839be/e/9d69d458f2bc0d882295ef7e',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El bólido de Reefscape 2025 — velocidad y consistencia camino al Mundial.',
@@ -324,7 +365,17 @@ export const robots: Robot[] = [
       },
     ],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Maverick-2024' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Maverick-2024' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/7713014d9581fd5ca14c0274/w/367b9afcf469d7b155e49540/e/0bb998828847636219fa081d',
+      },
+      {
+        label: 'Onshape (Off-season)',
+        url: 'https://cad.onshape.com/documents/a4bf027ffe03cb9046da3ddf/w/563b13dc5deb818f0e56fb66/e/4c1595fee31f7b5a9a219980',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El corcel de Crescendo 2024 — ágil, resistente y siempre en la pelea por el podio.',
@@ -362,7 +413,13 @@ export const robots: Robot[] = [
       },
     ],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Miura-2023' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Miura-2023' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/651a0b430eee3a08fbb1f7a7/w/027d7dbd4353654dd9344b8e/e/8f3c12c27018d27d0b25f71f',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El clásico de Charged Up 2023 — el diseño elegante que marcó el arranque de nuestra era FRC.',
@@ -386,7 +443,13 @@ export const robots: Robot[] = [
     season: '2022',
     events: [],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Mulssane-2022' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Mulssane-2022' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/edae7e9205ce05a9a26e9f89/w/527da252023d86d3110d1567/e/495a633181d9124b6bfd5893',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El regreso de Overture a las canchas en 2022 — elegancia y potencia tras la pausa.',
@@ -410,7 +473,13 @@ export const robots: Robot[] = [
     season: '2020',
     events: [],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Skyline-2020' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Skyline-2020' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/c6f11da8c93c477f249ce578/w/5e7059967a65710c92cccab6/e/f8831316ac6f404ab44b6594',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El Skyline de 2020 — una temporada marcada por la contingencia, pero con el motor siempre encendido.',
@@ -434,7 +503,13 @@ export const robots: Robot[] = [
     season: '2019',
     events: [],
     awards: [],
-    links: [{ label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Delorean-2019' }],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Overture-7421/FRC-Delorean-2019' },
+      {
+        label: 'Onshape',
+        url: 'https://cad.onshape.com/documents/c29c181df6a499a13c4fe4de/w/ea2d04626dd5e3831a44a5b4/e/30cf94f42d0a7c050cce3f46',
+      },
+    ],
     copy: {
       es: {
         tagline: 'El primer bólido de Overture con historial en Github — 2019, el inicio de nuestra era FRC documentada.',
